@@ -179,19 +179,19 @@ export default async function Page() {
               <dl className="space-y-6 border-t border-zinc-200 px-4 py-6 sm:px-6">
                 <div className="flex items-center justify-between">
                   <dt className="text-sm uppercase">Subtotal</dt>
-                  <dd className="text-sm font-medium text-zinc-900">$64.00</dd>
+                  <dd className="text-sm font-medium text-zinc-900">640.00</dd>
                 </div>
                 <div className="flex items-center justify-between">
                   <dt className="text-sm uppercase">Shipping</dt>
-                  <dd className="text-sm font-medium text-zinc-900">$5.00</dd>
+                  <dd className="text-sm font-medium text-zinc-900">500.00</dd>
                 </div>
                 <div className="flex items-center justify-between">
                   <dt className="text-sm uppercase">Taxes</dt>
-                  <dd className="text-sm font-medium text-zinc-900">$5.52</dd>
+                  <dd className="text-sm font-medium text-zinc-900">500.52</dd>
                 </div>
                 <div className="flex items-center justify-between border-t border-zinc-200 pt-6">
                   <dt className="text-base font-medium uppercase">Total</dt>
-                  <dd className="text-base font-medium text-zinc-900">$75.52</dd>
+                  <dd className="text-base font-medium text-zinc-900">1000.52</dd>
                 </div>
               </dl>
 

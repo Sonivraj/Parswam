@@ -17,7 +17,7 @@ export default function Header({ className, hasBottomBorder = true, variant = 'd
     <div
       className={clsx(
         className,
-        'group z-10 w-full',
+        'group z-40 w-full', // Increased z-index from 10 to 40
         variant === 'default' && 'relative',
         variant === 'bg-white-text-black' &&
           'absolute inset-x-0 top-0 bg-transparent text-white transition-colors duration-300'

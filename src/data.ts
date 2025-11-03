@@ -6,7 +6,7 @@ export async function getOrders() {
   return [
     {
       number: '4376',
-      status: 'Delivered on January 08, 2028',
+      status: 'Delivered on January 08, 2025',
       invoiceHref: '#',
       products: [
         {
@@ -85,7 +85,7 @@ export async function getOrders() {
 
 export function getCountries() {
   return [
-     {
+    {
       name: 'India',
       code: 'IN',
       flagUrl: '/flags/in.svg',
@@ -188,7 +188,7 @@ export function getProductReviews() {
       `,
       author: 'Michael T.',
       date: 'May 16, 2025',
-      datetime: '2025-01-06',
+      datetime: '2025-05-16',
     },
     {
       id: 2,
@@ -200,7 +200,7 @@ export function getProductReviews() {
       `,
       author: 'Sarah J.',
       date: 'May 16, 2025',
-      datetime: '2025-01-06',
+      datetime: '2025-05-16',
     },
     {
       id: 3,
@@ -212,7 +212,7 @@ export function getProductReviews() {
       `,
       author: 'David L.',
       date: 'May 16, 2025',
-      datetime: '2025-01-06',
+      datetime: '2025-05-16',
     },
   ]
 }
@@ -325,7 +325,7 @@ export function getCartProducts() {
       inStock: true,
       size: '32x32',
       imageSrc: '/images/jeans/Parshwam-1.webp',
-      imageAlt: "Classic straight jeans in dark wash.",
+      imageAlt: 'Classic straight jeans in dark wash.',
       quantity: 1,
     },
     {
@@ -337,7 +337,7 @@ export function getCartProducts() {
       inStock: true,
       size: '30x30',
       imageSrc: '/images/jeans/Parshwam-2.webp',
-      imageAlt: "Slim fit jeans in medium wash.",
+      imageAlt: 'Slim fit jeans in medium wash.',
       quantity: 2,
     },
     {
@@ -347,6 +347,7 @@ export function getCartProducts() {
       price: '1850.00',
       color: 'Light Wash',
       inStock: true,
+      size: '34x32',
       imageSrc: '/images/jeans/Parshwam-3.webp',
       imageAlt: 'Relaxed fit jeans in light wash.',
       quantity: 1,
@@ -420,15 +421,15 @@ export async function getJeansGroupCollections() {
     },
     {
       id: '2',
-      title: "Women's Jeans",
-      handle: 'womens-jeans',
+      title: "Kid's Jeans",
+      handle: 'kids-jeans',
       description: 'Flattering fits and styles for every body type. Discover your new favorite pair.',
       updatedAt: '2025-05-06T10:00:00-04:00',
       collections,
     },
     {
       id: '3',
-      title: 'Raw Denim',
+      title: 'Denim Jeans',
       handle: 'raw-denim',
       description: 'Unwashed, untreated denim that molds to your body over time. For the denim purist.',
       updatedAt: '2025-05-06T10:00:00-04:00',
@@ -436,7 +437,7 @@ export async function getJeansGroupCollections() {
     },
     {
       id: '4',
-      title: 'Stretch Denim',
+      title: 'Cotton Pants',
       handle: 'stretch-denim',
       description: 'Comfort meets style with our premium stretch denim collection.',
       updatedAt: '2025-05-06T10:00:00-04:00',
@@ -486,7 +487,7 @@ export async function getCollectionByHandle(handle: string) {
   return allCollections?.find((collection) => collection?.handle === handle)
 }
 
-export async function getProducts() {
+export async function getJeansProducts() {
   return [
     // Straight Leg Jeans
     {
@@ -495,7 +496,7 @@ export async function getProducts() {
       handle: 'classic-straight-jeans',
       vendor: 'DenimCo',
       tags: ['Straight', 'Classic', 'Everyday'],
-      price: 89,
+      price: 1890,
       images: [
         { src: '/images/jeans/Parshwam-1.webp', width: 1600, height: 2000, alt: 'Classic straight jeans front view' },
         { src: '/images/jeans/Parshwam-1-1.webp', width: 1600, height: 2000, alt: 'Classic straight jeans side view' },
@@ -533,7 +534,7 @@ export async function getProducts() {
       handle: 'vintage-straight-jeans',
       vendor: 'DenimCo',
       tags: ['Vintage', 'Straight', 'Retro'],
-      price: 95,
+      price: 1950,
       images: [
         { src: '/images/jeans/Parshwam-2.webp', width: 1600, height: 2000, alt: 'Vintage straight jeans front view' },
         { src: '/images/jeans/Parshwam-2-2.webp', width: 1600, height: 2000, alt: 'Vintage straight jeans detail' },
@@ -569,7 +570,7 @@ export async function getProducts() {
       handle: 'premium-straight-jeans',
       vendor: 'DenimCo',
       tags: ['Premium', 'Straight', 'Selvedge'],
-      price: 145,
+      price: 1450,
       images: [
         { src: '/images/jeans/Parshwam-3.webp', width: 1600, height: 2000, alt: 'Premium straight jeans front view' },
         { src: '/images/jeans/Parshwam-3-3.webp', width: 1600, height: 2000, alt: 'Premium straight jeans detail' },
@@ -607,7 +608,7 @@ export async function getProducts() {
       handle: 'slim-fit-jeans',
       vendor: 'DenimCo',
       tags: ['Slim', 'Modern', 'Stretch'],
-      price: 79,
+      price: 1790,
       images: [
         { src: '/images/jeans/Parshwam-4.webp', width: 1600, height: 2000, alt: 'Slim fit jeans front view' },
         { src: '/images/jeans/Parshwam-4-4.webp', width: 1600, height: 2000, alt: 'Slim fit jeans side view' },
@@ -644,7 +645,7 @@ export async function getProducts() {
       handle: 'stretch-slim-jeans',
       vendor: 'DenimCo',
       tags: ['Slim', 'Stretch', 'Comfort'],
-      price: 85,
+      price: 1850,
       images: [
         { src: '/images/jeans/Parshwam-5.webp', width: 1600, height: 2000, alt: 'Stretch slim jeans front view' },
         { src: '/images/jeans/Parshwam-5-5.webp', width: 1600, height: 2000, alt: 'Stretch slim jeans movement' },
@@ -718,12 +719,12 @@ export async function getProducts() {
       handle: 'loose-fit-jeans',
       vendor: 'DenimCo',
       tags: ['Loose', 'Comfort', 'Streetwear'],
-      price: 90,
+      price: 1950,
       images: [
         { src: '/images/jeans/Parshwam-4.webp', width: 1600, height: 2000, alt: 'Loose fit jeans front view' },
         { src: '/images/jeans/Parshwam-4-4.webp', width: 1600, height: 2000, alt: 'Loose fit jeans style' },
       ],
-      featured_image: { src: '/images/jeans/classic-straight-1.jpg', width: 1600, height: 2000, alt: 'Loose fit jeans' },
+      featured_image: { src: '/images/jeans/Parshwam-4.webp', width: 1600, height: 2000, alt: 'Loose fit jeans' },
       options: [
         {
           name: 'Wash',
@@ -756,7 +757,7 @@ export async function getProducts() {
       handle: 'super-skinny-jeans',
       vendor: 'DenimCo',
       tags: ['Skinny', 'Form-fitting', 'Stretch'],
-      price: 75,
+      price: 1750,
       images: [
         { src: '/images/jeans/Parshwam-2.webp', width: 1600, height: 2000, alt: 'Super skinny jeans front view' },
         { src: '/images/jeans/Parshwam-2-2.webp', width: 1600, height: 2000, alt: 'Super skinny jeans fit' },
@@ -793,11 +794,18 @@ export async function getProducts() {
       title: 'Classic Bootcut Jeans',
       handle: 'classic-bootcut-jeans',
       vendor: 'DenimCo',
-      tags: ['Bootcut', 'Classic', 'Western'],
-      price: 95,
+      tags: ['Bootcut', 'Classic', 'Western', 'Vintage'],
+      price: 1950,
+      compare_price: 1220,
+      description: 'Timeless bootcut jeans with a flared leg opening perfect for boots. Made from premium denim with comfortable stretch.',
+      material: '98% Cotton, 2% Elastane',
+      fit: 'Bootcut',
+      rise: 'Mid-rise',
       images: [
         { src: '/images/jeans/Parshwam-6.webp', width: 1600, height: 2000, alt: 'Classic bootcut jeans front view' },
         { src: '/images/jeans/Parshwam-6-6.webp', width: 1600, height: 2000, alt: 'Classic bootcut jeans with boots' },
+        { src: '/images/jeans/Parshwam-2.webp', width: 1600, height: 2000, alt: 'Bootcut detail showing flare' },
+        { src: '/images/jeans/Parshwam-2-2.webp', width: 1600, height: 2000, alt: 'Back view of bootcut jeans' },
       ],
       featured_image: { src: '/images/jeans/Parshwam-6.webp', width: 1600, height: 2000, alt: 'Classic bootcut jeans' },
       options: [
@@ -806,15 +814,19 @@ export async function getProducts() {
           optionValues: [
             { name: 'Medium Wash', swatch: { color: '#4682B4', image: null } },
             { name: 'Light Wash', swatch: { color: '#87CEEB', image: null } },
+            { name: 'Dark Wash', swatch: { color: '#191970', image: null } },
+            { name: 'Vintage Wash', swatch: { color: '#5F9EA0', image: null } },
           ],
         },
         {
           name: 'Size',
           optionValues: [
+            { swatch: null, name: '28x32' },
             { swatch: null, name: '30x32' },
             { swatch: null, name: '32x32' },
             { swatch: null, name: '34x32' },
             { swatch: null, name: '36x32' },
+            { swatch: null, name: '38x32' },
           ],
         },
       ],
@@ -823,38 +835,188 @@ export async function getProducts() {
         { name: 'Size', value: '32x32' },
       ],
       collections: [{ title: 'Bootcut', id: 2005, handle: 'bootcut' }],
+      inventory: 45,
+      sku: 'DBC-1009-M32',
+      weight: '1.2 kg',
+      care_instructions: 'Machine wash cold, tumble dry low',
+      features: [
+        'Flared leg opening',
+        'Comfortable stretch denim',
+        'Five-pocket styling',
+        'Reinforced stitching',
+        'Button fly with zip closure',
+      ],
+    },
+    {
+      id: 1010,
+      title: 'Slim Bootcut Jeans',
+      handle: 'slim-bootcut-jeans',
+      vendor: 'DenimCo',
+      tags: ['Bootcut', 'Slim', 'Modern', 'Stretch'],
+      price: 1100,
+      compare_price: 1400,
+      description: 'Modern slim bootcut jeans that hug your thighs and flare slightly at the bottom. Perfect for contemporary styling.',
+      material: '95% Cotton, 5% Elastane',
+      fit: 'Slim Bootcut',
+      rise: 'Low-rise',
+      images: [
+        { src: '/images/jeans/Parshwam-1.webp', width: 1600, height: 2000, alt: 'Slim bootcut jeans front view' },
+        { src: '/images/jeans/Parshwam-1-1.webp', width: 1600, height: 2000, alt: 'Slim bootcut jeans side view' },
+        { src: '/images/jeans/Parshwam-5.webp', width: 1600, height: 2000, alt: 'Slim bootcut fabric detail' },
+      ],
+      featured_image: { src: '/images/jeans/Parshwam-3.webp', width: 1600, height: 2000, alt: 'Slim bootcut jeans' },
+      options: [
+        {
+          name: 'Wash',
+          optionValues: [
+            { name: 'Dark Indigo', swatch: { color: '#000080', image: null } },
+            { name: 'Black', swatch: { color: '#000000', image: null } },
+            { name: 'Charcoal', swatch: { color: '#36454F', image: null } },
+          ],
+        },
+        {
+          name: 'Size',
+          optionValues: [
+            { swatch: null, name: '28x34' },
+            { swatch: null, name: '30x34' },
+            { swatch: null, name: '32x34' },
+            { swatch: null, name: '34x34' },
+            { swatch: null, name: '36x34' },
+          ],
+        },
+      ],
+      selected_options: [
+        { name: 'Wash', value: 'Dark Indigo' },
+        { name: 'Size', value: '32x34' },
+      ],
+      collections: [{ title: 'Bootcut', id: 2005, handle: 'bootcut' }],
+      inventory: 32,
+      sku: 'DBS-1010-D32',
+      weight: '1.1 kg',
+      care_instructions: 'Machine wash cold, line dry recommended',
+      features: [
+        'Slim through thigh',
+        'Subtle bootcut flare',
+        'Premium stretch denim',
+        'Modern low-rise fit',
+        'Zip fly with button',
+      ],
+    },
+    {
+      id: 1011,
+      title: 'Vintage Western Bootcut',
+      handle: 'vintage-western-bootcut',
+      vendor: 'WesternWear',
+      tags: ['Bootcut', 'Vintage', 'Western', 'Authentic'],
+      price: 1250,
+      compare_price: 1600,
+      description: 'Authentic western-style bootcut jeans with traditional stitching and rugged durability. True to their cowboy roots.',
+      material: '100% Cotton',
+      fit: 'Regular Bootcut',
+      rise: 'Mid-rise',
+      images: [
+        { src: '/images/jeans/Parshwam-3.webp', width: 1600, height: 2000, alt: 'Vintage western bootcut front' },
+        { src: '/images/jeans/Parshwam-3-3.webp', width: 1600, height: 2000, alt: 'Vintage western bootcut back' },
+      ],
+      featured_image: { src: '/images/jeans/Parshwam-6.webp', width: 1600, height: 2000, alt: 'Vintage western bootcut' },
+      options: [
+        {
+          name: 'Wash',
+          optionValues: [
+            { name: 'Stone Wash', swatch: { color: '#B0C4DE', image: null } },
+            { name: 'Vintage Blue', swatch: { color: '#6495ED', image: null } },
+            { name: 'Rinse Wash', swatch: { color: '#4169E1', image: null } },
+          ],
+        },
+        {
+          name: 'Size',
+          optionValues: [
+            { swatch: null, name: '29x34' },
+            { swatch: null, name: '31x34' },
+            { swatch: null, name: '33x34' },
+            { swatch: null, name: '35x34' },
+            { swatch: null, name: '37x34' },
+          ],
+        },
+      ],
+      selected_options: [
+        { name: 'Wash', value: 'Stone Wash' },
+        { name: 'Size', value: '33x34' },
+      ],
+      collections: [{ title: 'Bootcut', id: 2005, handle: 'bootcut' }],
+      inventory: 28,
+      sku: 'WWV-1011-S33',
+      weight: '1.3 kg',
+      care_instructions: 'Machine wash warm, avoid bleach',
+      features: [
+        'Authentic western stitching',
+        'Wider bootcut flare',
+        '100% rugged cotton',
+        'Traditional yoke back',
+        'Heavy-duty hardware',
+      ],
+    },
+    {
+      id: 1012,
+      title: 'Stretch Comfort Bootcut',
+      handle: 'stretch-comfort-bootcut',
+      vendor: 'ComfortDenim',
+      tags: ['Bootcut', 'Stretch', 'Comfort', 'Everyday'],
+      price: 850,
+      compare_price: 1100,
+      description: 'Everyday bootcut jeans with maximum comfort stretch. Perfect for all-day wear without sacrificing style.',
+      material: '80% Cotton, 18% Polyester, 2% Elastane',
+      fit: 'Relaxed Bootcut',
+      rise: 'Mid-rise',
+      images: [
+        { src: '/images/jeans/Parshwam-1.webp', width: 1600, height: 2000, alt: 'Comfort bootcut front view' },
+        { src: '/images/jeans/Parshwam-1-1.webp', width: 1600, height: 2000, alt: 'Comfort bootcut showing flexibility' },
+      ],
+      featured_image: { src: '/images/jeans/Parshwam-1.webp', width: 1600, height: 2000, alt: 'Stretch comfort bootcut' },
+      options: [
+        {
+          name: 'Color',
+          optionValues: [
+            { name: 'Medium Blue', swatch: { color: '#6A8DB4', image: null } },
+            { name: 'Dark Blue', swatch: { color: '#354B6B', image: null } },
+            { name: 'Light Blue', swatch: { color: '#8FB0D0', image: null } },
+          ],
+        },
+        {
+          name: 'Size',
+          optionValues: [
+            { swatch: null, name: '28x30' },
+            { swatch: null, name: '30x30' },
+            { swatch: null, name: '32x30' },
+            { swatch: null, name: '34x30' },
+            { swatch: null, name: '36x30' },
+            { swatch: null, name: '38x30' },
+            { swatch: null, name: '40x30' },
+          ],
+        },
+      ],
+      selected_options: [
+        { name: 'Color', value: 'Medium Blue' },
+        { name: 'Size', value: '32x30' },
+      ],
+      collections: [{ title: 'Bootcut', id: 2005, handle: 'bootcut' }],
+      inventory: 67,
+      sku: 'CDS-1012-M32',
+      weight: '1.0 kg',
+      care_instructions: 'Machine wash warm, tumble dry medium',
+      features: [
+        'Maximum comfort stretch',
+        'Relaxed fit through thigh',
+        'Soft cotton blend',
+        'Easy care fabric',
+        'All-day comfort waistband',
+      ],
     },
   ]
 }
 
-export async function getJeansProducts() {
-  const allProducts = await getProducts()
-  return allProducts
-}
-
-// get product by handle
-export async function getProductByHandle(handle: string) {
-  handle = handle.toLowerCase()
-  const allProducts = await getProducts()
-  const product = allProducts?.find((product) => product?.handle === handle) as TProductItem
-  if (!product) {
-    return null
-  }
-  
-  // Add image from public directory
-  const productImage = `/images/jeans/${handle}Parshwam-6.webp` // or .png, .webp, etc.
-  
-  return {
-    ...product,
-    description: 'Premium denim jeans crafted with attention to detail and quality. Made from the finest materials for comfort and durability that lasts.',
-    image: productImage,
-    images: [
-      productImage,
-      `/images/jeans/${handle}-Parshwam-6.webp`,
-      `/images/products/${handle}-Parshwam-6-6.webp`
-    ],
-    altText: `${product.title} - Premium denim jeans`
-  }
+export async function getProducts() {
+  return await getJeansProducts()
 }
 
 // COMMON Types ------------------------------------------------------------------------
