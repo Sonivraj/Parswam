@@ -1,44 +1,56 @@
-# Bitpan E-commerce Next.js Template — Netlify deployment
+# Bitpan E-commerce Next.js Template — Vercel deployment
 
-This repo is a Next.js app using the App Router. To deploy on Netlify we use the official Netlify Next.js plugin which handles build output and server functions.
+This repository is a Next.js (App Router) application prepared to deploy on Vercel. Vercel supports Next.js natively, so deployments are straightforward.
 
-Quick setup (what this repo already contains)
+Quick Vercel setup
 
-- `netlify.toml` — config enabling `@netlify/plugin-nextjs` and publishing to `.netlify/output`.
-- Build command: `npm run build` (runs `next build`).
-
-Recommended Netlify site settings
-
-1. In Netlify UI → Sites → (your site) → Site settings → Build & deploy → Continuous Deployment → Build settings:
+1. If you haven't already, create a Vercel account and link your GitHub repository.
+2. On Vercel, import the project and select the `main` branch.
+3. Default Build Settings (Vercel auto-detects Next.js):
+   - Framework: Next.js
    - Build command: `npm run build`
-   - Branch: `main` (or your chosen branch)
-   - Publish directory: leave empty (the plugin controls output) — or set to `.netlify/output` if you prefer repo-controlled setting.
-2. No extra publish directory pointing at the repo root (e.g. `/opt/build/repo`). If a publish dir equals the repo root the plugin will fail with: "Your publish directory cannot be the same as the base directory of your site." If you see that error, clear the Publish directory in the UI or use `.netlify/output` in `netlify.toml`.
+   - Output directory: (leave blank — Vercel handles Next output automatically)
 
-What to look for in Netlify deploy logs
+Redirects and routing
 
-- Plugin install / start: references to `@netlify/plugin-nextjs`.
-- Next build: `Creating an optimized production build ...` and `Compiled successfully`.
-- Plugin output / publish: `.netlify/output prepared`, `Copying files to deployment`, or `Publish directory: .netlify/output`.
-- Final result: `Deploy succeeded` / `Site is live`.
+- This repo includes `vercel.json` which defines a redirect from `/` to `/home-fashion` (302). Edit `vercel.json` if you want a permanent redirect (301) or different behavior.
+
+Files changed for Vercel
+
+- Removed Netlify-specific config and plugin to avoid deployment conflicts.
+- Added `vercel.json` to declare the Next.js builder and the root redirect.
+
+Local development
+
+Install dependencies and run locally:
+
+```bash
+npm install
+npm run dev
+```
+
+Open http://localhost:3000 to view the site locally.
+
+Deploy checklist
+
+- Push to `main` — Vercel will build and deploy automatically.
+- Confirm the redirect by visiting the Vercel deployment URL root (it should redirect to `/home-fashion`).
 
 Troubleshooting
 
-- If the build fails with "Your publish directory cannot be the same as the base directory of your site", clear the Publish directory in Netlify UI or set `publish = ".netlify/output"` in `netlify.toml` (this repo already uses `.netlify/output`).
-- If the build fails with TypeScript or runtime errors, check the Netlify build log for the specific error and fix it locally (run `npm run build`) before re-deploying.
-- If you see Next.js image warnings like `@next/next/no-img-element`, these are lint warnings only — they don't typically stop the deploy, but consider switching to `next/image` for better optimization.
+- If build errors occur on Vercel, run `npm run build` locally and fix any TypeScript or runtime issues before re-deploying.
+- If you need a specific Node version in Vercel, keep the `engines.node` field in `package.json` (this repo already requests Node >=18).
 
-Triggering a redeploy
+Next steps I can take (pick any):
 
-- Push any commit to the branch Netlify tracks (e.g., `main`), or use the Netlify UI to trigger a deploy manually.
-
-If you'd like, I can also include these steps in a small CI checklist or add a Netlify health-check note to the README.
+- Watch a Vercel deploy and iterate on errors until green.
+- Centralize currency formatting across the codebase.
+- Add a small smoke-test script that runs after deploy (optional).
 
 ---
-If you want me to run any follow-ups (check new deploy logs, add a health-check page, or centralize currency formatting), reply and I’ll continue.
-# Bitpan Demo
+Bitpan Demo
 
-To run the Bitpan demo, first install the npm dependencies:
+To run the Bitpan demo locally, first install the npm dependencies:
 
 ```bash
 npm install
@@ -50,4 +62,4 @@ Next, run the development server:
 npm run dev
 ```
 
-Finally, open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the website.
