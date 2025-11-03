@@ -117,7 +117,7 @@ export default async function Product({ params }: { params: Promise<{ handle: st
           <TabPanels className="mt-10 lg:mt-16">
             <TabPanel>
               <ProductDetailContent
-                content={description}
+                content={description ?? ''}
                 imageSrc={
                   product?.collections[0].handle === 'skincare-essentials'
                     ? '/images/skincare/feature-1.webp'

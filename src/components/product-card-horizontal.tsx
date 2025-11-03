@@ -46,7 +46,7 @@ export default function ProductCardHorizontal({ product, className, imageRatio =
             {title}
           </TextLink>
           <Text className="mt-0.5 text-xs text-zinc-500">{color ?? size ?? ''}</Text>
-          <Text className="mt-auto leading-tight sm:leading-6">${price.toFixed(2)}</Text>
+          <Text className="mt-auto leading-tight sm:leading-6">₹{Number(price).toFixed(2)}</Text>
         </div>
       </div>
 

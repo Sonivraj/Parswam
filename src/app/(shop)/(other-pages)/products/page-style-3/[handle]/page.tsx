@@ -2,7 +2,14 @@ import { Divider } from '@/components/divider'
 import { Heading } from '@/components/heading'
 import ProductCardHorizontal from '@/components/product-card-horizontal'
 import { Text } from '@/components/text'
-import { getFashionProducts, getProductByHandle, getProductReviews, TProductItem } from '@/data'
+import {
+  getFashionProducts,
+  getHijabProducts,
+  getProductByHandle,
+  getProductReviews,
+  getSkincareProducts,
+  TProductItem,
+} from '@/data'
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
 import clsx from 'clsx'
 import { Metadata } from 'next'
@@ -112,7 +119,7 @@ export default async function Product({ params }: { params: Promise<{ handle: st
           <TabPanels className="mt-10 lg:mt-16">
             <TabPanel>
               <ProductDetailContent
-                content={description}
+                content={description ?? ''}
                 imageSrc={
                   product?.collections[0].handle === 'skincare-essentials'
                     ? '/images/skincare/feature-1.webp'

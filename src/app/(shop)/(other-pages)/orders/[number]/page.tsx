@@ -81,7 +81,9 @@ const Page = async ({ params }: { params: Promise<{ number: string }> }) => {
                         <a href={product.href}>{product.name}</a>
                       </h3>
                       <Text className="mt-2 text-sm text-zinc-500">Qty {product.quantity}</Text>
-                      <Text className="mt-auto text-sm font-medium text-zinc-900">${product.price}</Text>
+                      <Text className="mt-auto text-sm font-medium text-zinc-900">
+                        ₹{Number(product.price).toFixed(2)}
+                      </Text>
                     </div>
                   </div>
 
@@ -173,20 +175,20 @@ const Page = async ({ params }: { params: Promise<{ number: string }> }) => {
             <dl className="mt-8 space-y-5 text-sm uppercase lg:col-span-5 lg:mt-0">
               <div className="flex items-center justify-between">
                 <dt className="text-zinc-600">Subtotal</dt>
-                <dd className="font-medium text-zinc-900">$72</dd>
+                <dd className="font-medium text-zinc-900">₹72</dd>
               </div>
               <div className="flex items-center justify-between">
                 <dt className="text-zinc-600">Shipping</dt>
-                <dd className="font-medium text-zinc-900">$5</dd>
+                <dd className="font-medium text-zinc-900">₹5</dd>
               </div>
               <div className="flex items-center justify-between">
                 <dt className="text-zinc-600">Tax</dt>
-                <dd className="font-medium text-zinc-900">$6.16</dd>
+                <dd className="font-medium text-zinc-900">₹6.16</dd>
               </div>
               <Divider />
               <div className="flex items-center justify-between">
                 <dt className="font-medium text-zinc-900">Order total</dt>
-                <dd className="font-medium text-zinc-950">$83.16</dd>
+                <dd className="font-medium text-zinc-950">₹83.16</dd>
               </div>
             </dl>
           </div>

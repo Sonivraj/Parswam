@@ -24,14 +24,16 @@ const DeliveryRadio = () => {
             key={deliveryMethod.id}
             value={deliveryMethod}
             aria-label={deliveryMethod.title}
-            aria-description={`${deliveryMethod.turnaround} for ${deliveryMethod.price}`}
+            aria-description={`${deliveryMethod.turnaround} for ₹${Number(deliveryMethod.price).toFixed(2)}`}
             className="group relative flex cursor-pointer rounded-lg border border-zinc-300 bg-white p-4 focus:outline-hidden data-checked:border-transparent data-focus:ring-2 data-focus:ring-zinc-900"
           >
             <span className="flex flex-1">
               <span className="flex flex-col">
                 <span className="block text-sm font-medium text-zinc-900">{deliveryMethod.title}</span>
                 <span className="mt-1 flex items-center text-sm text-zinc-500">{deliveryMethod.turnaround}</span>
-                <span className="mt-6 text-sm font-medium text-zinc-900">{deliveryMethod.price}</span>
+                <span className="mt-6 text-sm font-medium text-zinc-900">
+                  ₹{Number(deliveryMethod.price).toFixed(2)}
+                </span>
               </span>
             </span>
             <CheckCircleIcon aria-hidden="true" className="size-5 text-zinc-900 group-not-data-checked:hidden" />

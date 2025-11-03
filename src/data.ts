@@ -1022,3 +1022,21 @@ export async function getProducts() {
 // COMMON Types ------------------------------------------------------------------------
 export type TCollection = Awaited<ReturnType<typeof getJeansCollections>>[number]
 export type TProductItem = Awaited<ReturnType<typeof getProducts>>[number]
+
+// Backwards-compatible passthroughs for templates that expect these exports
+export async function getProductByHandle(handle: string) {
+  const products = await getProducts()
+  return products.find((p) => p.handle === handle)
+}
+
+export async function getFashionProducts() {
+  return await getProducts()
+}
+
+export async function getSkincareProducts() {
+  return await getProducts()
+}
+
+export async function getHijabProducts() {
+  return await getProducts()
+}

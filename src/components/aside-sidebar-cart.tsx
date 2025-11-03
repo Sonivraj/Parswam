@@ -41,7 +41,7 @@ const AsideSidebarCart = async ({ className = '' }: Props) => {
           <div className="">
             <div className="flex justify-between text-base font-medium text-gray-900">
               <Text className="font-medium">Subtotal</Text>
-              <Text className="font-medium">$154.00</Text>
+              <Text className="font-medium">₹154.00</Text>
             </div>
             <Text className="mt-0.5 text-xs text-zinc-500">Shipping and taxes calculated at checkout.</Text>
             <div className="mt-5 grid grid-cols-2 gap-2">
@@ -89,14 +89,14 @@ export const CartProductItem = ({
           <h3 className="leading-tight">
             <TextLink href={'/products/' + product.handle}>{product.name}</TextLink>
           </h3>
-          <Text className="ms-4">{product.price}</Text>
+          <Text className="ms-4">₹{Number(product.price).toFixed(2)}</Text>
         </div>
         <div className="mt-1 flex gap-1.5 text-xs text-zinc-500">
           <Text className="text-xs">{product.color}</Text>
           {product.size ? <Text className="text-xs">/</Text> : null}
           {product.size ? <Text className="text-xs">{product.size}</Text> : null}
         </div>
-        <Text className="mt-1 text-xs text-zinc-500">{product.price}</Text>
+        <Text className="mt-1 text-xs text-zinc-500">₹{Number(product.price).toFixed(2)}</Text>
         <div className="mt-auto flex items-center justify-between pt-2 text-sm">
           <div className="inline-grid w-full max-w-16 grid-cols-1">
             <select

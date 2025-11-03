@@ -74,7 +74,7 @@ export default async function Page() {
                           <span>{product.size}</span>
                         </Text>
                         <Text className="text-xs text-zinc-500">Qty {product.quantity}</Text>
-                        <Text className="mt-auto font-medium text-zinc-900">{product.price}</Text>
+                        <Text className="mt-auto font-medium text-zinc-900">₹{Number(product.price).toFixed(2)}</Text>
                       </div>
                     </div>
                     <div className="mt-6 max-w-48 space-y-2 sm:mt-0 sm:ml-6 sm:w-40 sm:flex-none">
