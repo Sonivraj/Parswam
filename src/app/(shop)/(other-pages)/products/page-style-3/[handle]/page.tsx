@@ -2,14 +2,7 @@ import { Divider } from '@/components/divider'
 import { Heading } from '@/components/heading'
 import ProductCardHorizontal from '@/components/product-card-horizontal'
 import { Text } from '@/components/text'
-import {
-  getFashionProducts,
-  getHijabProducts,
-  getProductByHandle,
-  getProductReviews,
-  getSkincareProducts,
-  TProductItem,
-} from '@/data'
+import { getFashionProducts, getProductByHandle, getProductReviews, TProductItem } from '@/data'
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
 import clsx from 'clsx'
 import { Metadata } from 'next'
@@ -48,11 +41,11 @@ export default async function Product({ params }: { params: Promise<{ handle: st
   let otherProducts = [] as TProductItem[]
   if (product?.collections[0].handle === 'luxury-fashion') {
     otherProducts = await getFashionProducts()
-  } else if (product?.collections[0].handle === 'skincare-essentials') {
-    otherProducts = await getSkincareProducts()
-  } else {
-    otherProducts = await getHijabProducts()
-  }
+  } //else if (product?.collections[0].handle === 'skincare-essentials') {
+  //   otherProducts = await getSkincareProducts()
+  // } else {
+  //   otherProducts = await getHijabProducts()
+  // }
   const combineProduct = otherProducts?.[1]
   const relatedProducts = otherProducts?.slice(1, 6)
   const productReviews = await getProductReviews()
