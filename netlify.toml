@@ -1,0 +1,6 @@
+[build]
+  # Use the normal Next build command; Netlify's Next plugin will handle the output
+  command = "npm run build"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
