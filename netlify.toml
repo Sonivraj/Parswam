@@ -1,6 +1,8 @@
 [build]
   # Use the normal Next build command; Netlify's Next plugin will handle the output
   command = "npm run build"
+  # Let the plugin write output to its directory; do not set publish to repo root
+  publish = ".netlify/output"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
